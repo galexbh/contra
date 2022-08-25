@@ -1,8 +1,10 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://map/level_1.png" type="Texture" id=1]
 [ext_resource path="res://sprites/idle_up.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player.gd" type="Script" id=3]
+[ext_resource path="res://sprites/run.png" type="Texture" id=4]
+[ext_resource path="res://sprites/jump.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 367.82, 6.86144 )
@@ -67,6 +69,168 @@ extents = Vector2( 63.9581, 6.73406 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.5, 16.5 )
 
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body_P1/Spr_P1:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body_P1/Spr_P1:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body_P1/Spr_P1:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 4 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body_P1/Spr_P1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body_P1/Spr_P1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body_P1/Spr_P1:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "jump"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body_P1/Spr_P1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body_P1/Spr_P1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body_P1/Spr_P1:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "run"
+length = 0.5
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body_P1/Spr_P1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body_P1/Spr_P1:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body_P1/Spr_P1:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
 [node name="Main" type="Node"]
 
 [node name="Background" type="Sprite" parent="."]
@@ -74,296 +238,311 @@ position = Vector2( -763.265, -49.25 )
 scale = Vector2( 1.4417, 1.4417 )
 texture = ExtResource( 1 )
 
-[node name="Floor" type="StaticBody2D" parent="Background"]
+[node name="Floor" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor"]
 position = Vector2( -1329.22, 1.51502 )
 shape = SubResource( 2 )
 
-[node name="Floor2" type="StaticBody2D" parent="Background"]
+[node name="Floor2" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor2"]
 position = Vector2( -1521.08, 32.6291 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 3 )
 
-[node name="Floor3" type="StaticBody2D" parent="Background"]
+[node name="Floor3" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor3"]
 position = Vector2( -1456.57, 64.5358 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 
-[node name="Floor4" type="StaticBody2D" parent="Background"]
+[node name="Floor4" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor4"]
 position = Vector2( -1408.81, 97.035 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 5 )
 
-[node name="Floor5" type="StaticBody2D" parent="Background"]
+[node name="Floor5" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor5"]
 position = Vector2( -1361.2, 64.5358 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
 
-[node name="Floor6" type="StaticBody2D" parent="Background"]
+[node name="Floor6" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor6"]
 position = Vector2( -1281.43, 32.9759 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
-[node name="Floor7" type="StaticBody2D" parent="Background"]
+[node name="Floor7" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor7"]
 position = Vector2( -1088.11, 97.9743 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 7 )
 
-[node name="Floor8" type="StaticBody2D" parent="Background"]
+[node name="Floor8" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor8"]
 position = Vector2( -1041.09, 48.5824 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 8 )
 
-[node name="Floor9" type="StaticBody2D" parent="Background"]
+[node name="Floor9" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor9"]
 position = Vector2( -752.47, 0.968124 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 9 )
 
-[node name="Floor10" type="StaticBody2D" parent="Background"]
+[node name="Floor10" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor10"]
 position = Vector2( -415.095, 1.06921 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 10 )
 
-[node name="Floor11" type="StaticBody2D" parent="Background"]
+[node name="Floor11" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor11"]
 position = Vector2( -95.681, -30.8375 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 11 )
 
-[node name="Floor12" type="StaticBody2D" parent="Background"]
+[node name="Floor12" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor12"]
 position = Vector2( -271.861, 98.5233 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 12 )
 
-[node name="Floor34" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor34"]
-position = Vector2( 496.334, 33.4673 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 12 )
-
-[node name="Floor35" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor35"]
-position = Vector2( 815.885, 66.0677 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 12 )
-
-[node name="Floor36" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor36"]
-position = Vector2( 1167.97, 97.2807 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 12 )
-
-[node name="Floor37" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor37"]
-position = Vector2( 1488.01, 49.4207 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 12 )
-
-[node name="Floor13" type="StaticBody2D" parent="Background"]
+[node name="Floor13" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor13"]
 position = Vector2( -191.95, 48.5824 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 13 )
 
-[node name="Floor14" type="StaticBody2D" parent="Background"]
+[node name="Floor14" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor14"]
 position = Vector2( -15.5675, 33.3227 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 14 )
 
-[node name="Floor15" type="StaticBody2D" parent="Background"]
+[node name="Floor15" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor15"]
 position = Vector2( 96.1782, 97.9743 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 15 )
 
-[node name="Floor16" type="StaticBody2D" parent="Background"]
+[node name="Floor16" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor16"]
 position = Vector2( 240.033, 1.06921 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 16 )
 
-[node name="Floor17" type="StaticBody2D" parent="Background"]
+[node name="Floor17" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor17"]
 position = Vector2( 223.733, 64.5358 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor18" type="StaticBody2D" parent="Background"]
+[node name="Floor18" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor18"]
 position = Vector2( 319.944, 66.0676 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor19" type="StaticBody2D" parent="Background"]
+[node name="Floor19" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor19"]
 position = Vector2( 543.985, 0.867033 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor28" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor28"]
-position = Vector2( 400.26, 48.5824 )
+[node name="Floor20" type="StaticBody2D" parent="Background" groups=["floor"]]
 scale = Vector2( 1, 1 )
-shape = SubResource( 18 )
-
-[node name="Floor29" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor29"]
-position = Vector2( 752.072, 97.2807 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 18 )
-
-[node name="Floor30" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor30"]
-position = Vector2( 912.299, 97.2807 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 18 )
-
-[node name="Floor31" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor31"]
-position = Vector2( 943.931, 48.7271 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 18 )
-
-[node name="Floor32" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor32"]
-position = Vector2( 1551.82, 32.7737 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 18 )
-
-[node name="Floor33" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor33"]
-position = Vector2( 1583.73, 64.6804 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 18 )
-
-[node name="Floor20" type="StaticBody2D" parent="Background"]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor20"]
 position = Vector2( 639.705, 32.7737 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor21" type="StaticBody2D" parent="Background"]
+[node name="Floor21" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor21"]
 position = Vector2( 671.611, 0.867033 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor22" type="StaticBody2D" parent="Background"]
+[node name="Floor22" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor22"]
 position = Vector2( 768.025, 32.7737 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor23" type="StaticBody2D" parent="Background"]
+[node name="Floor23" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor23"]
 position = Vector2( 896.345, 0.867033 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor24" type="StaticBody2D" parent="Background"]
+[node name="Floor24" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor24"]
 position = Vector2( 928.252, -30.346 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor25" type="StaticBody2D" parent="Background"]
+[node name="Floor25" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor25"]
 position = Vector2( 1023.97, 1.56066 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor26" type="StaticBody2D" parent="Background"]
+[node name="Floor26" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor26"]
 position = Vector2( 1279.92, 64.6804 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor27" type="StaticBody2D" parent="Background"]
+[node name="Floor27" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor27"]
 position = Vector2( 1376.33, 32.7737 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 17 )
 
-[node name="Floor38" type="StaticBody2D" parent="Background"]
+[node name="Floor28" type="StaticBody2D" parent="Background" groups=["floor"]]
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor28"]
+position = Vector2( 400.26, 48.5824 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 18 )
+
+[node name="Floor29" type="StaticBody2D" parent="Background" groups=["floor"]]
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor29"]
+position = Vector2( 752.072, 97.2807 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 18 )
+
+[node name="Floor30" type="StaticBody2D" parent="Background" groups=["floor"]]
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor30"]
+position = Vector2( 912.299, 97.2807 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 18 )
+
+[node name="Floor31" type="StaticBody2D" parent="Background" groups=["floor"]]
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor31"]
+position = Vector2( 943.931, 48.7271 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 18 )
+
+[node name="Floor32" type="StaticBody2D" parent="Background" groups=["floor"]]
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor32"]
+position = Vector2( 1551.82, 32.7737 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 18 )
+
+[node name="Floor33" type="StaticBody2D" parent="Background" groups=["floor"]]
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor33"]
+position = Vector2( 1583.73, 64.6804 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 18 )
+
+[node name="Floor34" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor34"]
+position = Vector2( 496.334, 33.4673 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 12 )
+
+[node name="Floor35" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor35"]
+position = Vector2( 815.885, 66.0677 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 12 )
+
+[node name="Floor36" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor36"]
+position = Vector2( 1167.97, 97.2807 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 12 )
+
+[node name="Floor37" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor37"]
+position = Vector2( 1488.01, 49.4207 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 12 )
+
+[node name="Floor38" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor38"]
 position = Vector2( 1528.09, 96.4425 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 19 )
 
-[node name="Floor39" type="StaticBody2D" parent="Background"]
+[node name="Floor39" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor39"]
 position = Vector2( 1103.94, 32.9759 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 20 )
 
-[node name="Floor41" type="StaticBody2D" parent="Background"]
-
-[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor41"]
-position = Vector2( 399.465, -30.346 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 20 )
-
-[node name="Floor40" type="StaticBody2D" parent="Background"]
+[node name="Floor40" type="StaticBody2D" parent="Background" groups=["floor"]]
 
 [node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor40"]
 position = Vector2( 1471.91, 1.06921 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 21 )
 
+[node name="Floor41" type="StaticBody2D" parent="Background" groups=["floor"]]
+scale = Vector2( 1, 1 )
+
+[node name="Ground_Collision" type="CollisionShape2D" parent="Background/Floor41"]
+position = Vector2( 399.465, -30.346 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 20 )
+
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( -3023, -75 )
 script = ExtResource( 3 )
-gravity = 5000.0
+gravity = 6500.0
+motion_speed = 4000.0
+jump_power = 6000.0
 
 [node name="Body_P1" type="KinematicBody2D" parent="Position2D"]
 
@@ -372,9 +551,15 @@ position = Vector2( -2.5, 4.5 )
 shape = SubResource( 1 )
 
 [node name="Spr_P1" type="Sprite" parent="Position2D/Body_P1"]
-texture = ExtResource( 2 )
-hframes = 4
+texture = ExtResource( 4 )
+hframes = 6
 
 [node name="Camera2D" type="Camera2D" parent="Position2D/Body_P1"]
 current = true
 zoom = Vector2( 0.45, 0.45 )
+
+[node name="Animation_P1" type="AnimationPlayer" parent="Position2D"]
+anims/RESET = SubResource( 22 )
+anims/idle = SubResource( 23 )
+anims/jump = SubResource( 25 )
+anims/run = SubResource( 24 )
