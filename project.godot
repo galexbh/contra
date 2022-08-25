@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Position2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/player.gd"
+} ]
+_global_script_class_icons={
+"Player": ""
+}
+
 [application]
 
 config/name="Contra"
+run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [gui]
