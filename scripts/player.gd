@@ -16,14 +16,14 @@ func _physics_process(delta):
 	
 	if(Input.is_action_pressed("key_d")):
 		speed.x = motion_speed
+		get_node("Body_P1/Spr_P1").flip_h = false
 		if(!get_node("Animation_P1").is_playing()):
 			get_node("Animation_P1").play("run")
-			get_node("Body_P1/Spr_P1").flip_h = false
 	elif(Input.is_action_pressed("key_a")):
 		speed.x = -motion_speed
+		get_node("Body_P1/Spr_P1").flip_h = true
 		if(!get_node("Animation_P1").is_playing()):
 			get_node("Animation_P1").play("run")
-			get_node("Body_P1/Spr_P1").flip_h = true
 	else:
 		speed.x = 0
 		if(is_jumping):
